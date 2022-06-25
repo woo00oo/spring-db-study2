@@ -63,7 +63,7 @@ public class JdbcTemplateItemRepositoryV1 implements ItemRepository {
 
     @Override
     public Optional<Item> findById(Long id) {
-        String sql = "select, id, item_name, price, quantity from item where id = ?";
+        String sql = "select id, item_name, price, quantity from item where id = ?";
         try {
             Item item = template.queryForObject(sql, itemRowMapper(), id); //단건 조회
             return Optional.of(item);
