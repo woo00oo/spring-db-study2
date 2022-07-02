@@ -1,6 +1,6 @@
 package hello.itemservice.config;
 
-import hello.itemservice.jpa.JpaItemRepositoryV1;
+import hello.itemservice.jpa.JpaItemRepository;
 import hello.itemservice.repository.ItemRepository;
 import hello.itemservice.service.ItemService;
 import hello.itemservice.service.ItemServiceV1;
@@ -23,6 +23,6 @@ public class JpaConfig {
 
     @Bean
     public ItemRepository itemRepository() {
-        return new JpaItemRepositoryV1(em);
+        return new JpaItemRepository(em);
     }
 }
