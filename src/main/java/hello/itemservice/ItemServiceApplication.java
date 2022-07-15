@@ -22,7 +22,7 @@ import javax.sql.DataSource;
 //@Import(QuerydslConfig.class)
 @Import(V2Config.class)
 @Slf4j
-@SpringBootApplication(scanBasePackages = "hello.itemservice.web")
+@SpringBootApplication(scanBasePackages = {"hello.itemservice.web", "hello.itemservice.transactional"})
 public class ItemServiceApplication {
 
 	public static void main(String[] args) {
