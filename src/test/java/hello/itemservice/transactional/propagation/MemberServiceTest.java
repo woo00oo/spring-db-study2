@@ -62,7 +62,25 @@ class MemberServiceTest {
     @Test
     void singleTx() {
         //given
-        String userName = "outerTxOff_success";
+        String userName = "singleTx";
+
+        //when
+        memberService.joinV1(userName);
+
+        //then
+        assertTrue(memberRepository.find(userName).isPresent());
+        assertTrue(logRepository.find(userName).isPresent());
+    }
+
+    /**
+     * memberService    @Transactional : ON
+     * memberRepository @Transactional : ON
+     * logRepository    @Transactional : ON
+     */
+    @Test
+    void outerTxOn_success() {
+        //given
+        String userName = "outerTxOn_success";
 
         //when
         memberService.joinV1(userName);
